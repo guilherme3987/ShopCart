@@ -5,7 +5,7 @@ import { Form } from 'react-router-dom';
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [formValid, setFormValid] = useState(false); // Renomeado para seguir o padrão de nomenclatura
+  const [formValid, setFormValid] = useState(false); 
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleEmailChange = (e) => {
