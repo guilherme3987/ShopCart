@@ -35,7 +35,7 @@ export default function LoginPage() {
     //API
     if (formValid) {
       alert('Login válido');
-    }else{alert('Email     senha inválidos')}
+    }else{alert('Email ou senha inválidos')}
   };
 
 
