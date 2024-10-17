@@ -22,7 +22,6 @@ export default function LoginPage() {
     const isEmailValid = /\S+@\S+\.\S+/.test(email);
     const isPasswordValid = password.length >= 8;
 
-    // 
     setFormValid(isEmailValid && isPasswordValid);
 
     if (!isEmailValid || !isPasswordValid) {
