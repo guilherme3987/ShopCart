@@ -22,10 +22,9 @@ export default function LoginPage() {
     const isEmailValid = /\S+@\S+\.\S+/.test(email);
     const isPasswordValid = password.length >= 8;
 
-    // Atualiza o estado com base na validade do formulário
+    // 
     setFormValid(isEmailValid && isPasswordValid);
 
-    // Alerta apenas se ambos os campos forem inválidos
     if (!isEmailValid || !isPasswordValid) {
       console.log('Email ou senha inválidos.');
     }
@@ -34,10 +33,9 @@ export default function LoginPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Lógica de autenticação através da API
+    //API
     if (formValid) {
       alert('Login válido');
-      // Aqui você pode adicionar a lógica para autenticação via API
     }
   };
 
