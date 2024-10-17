@@ -35,7 +35,6 @@ export default function LoginPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    //API
     if (formValid) {
       alert('Login válido');
     }//else{alert('Email ou senha inválidos')}
