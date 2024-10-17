@@ -45,7 +45,7 @@ export default function LoginPage() {
       
       <input type="password" placeholder="Senha" value={password} onChange={handlePasswordChange} required/>
   
-      <button type="submit">Entrar</button>
+      <button type="submit" disabled={!formValid} >Entrar</button>
   
     </form>
   );
