@@ -6,6 +6,7 @@ export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [formValid, setFormValid] = useState(false); // Renomeado para seguir o padrão de nomenclatura
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -25,7 +26,9 @@ export default function LoginPage() {
     setFormValid(isEmailValid && isPasswordValid);
 
     if (!isEmailValid || !isPasswordValid) {
-      console.log('Email ou senha inválidos.');
+      setErrorMessage('Email ou senha inválidos.');
+    }else{
+      setErrorMessage(' ');
     }
   };
 
@@ -46,7 +49,7 @@ export default function LoginPage() {
       <input type="password" placeholder="Senha" value={password} onChange={handlePasswordChange} required/>
   
       <button type="submit" disabled={!formValid} >Entrar</button>
-  
+      {errorMessage && <div className="error-message">{errorMessage}</div>}
     </form>
   );
 }
