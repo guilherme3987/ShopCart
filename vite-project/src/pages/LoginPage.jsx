@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import '../styles/LoginPage.css';
-import { Form } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [formValid, setFormValid] = useState(false); 
   const [errorMessage, setErrorMessage] = useState('');
+
+  const navigate = useNavigate(); 
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -37,6 +39,7 @@ export default function LoginPage() {
 
     if (formValid) {
       alert('Login válido');
+      navigate('/products')
     }//else{alert('Email ou senha inválidos')}
   };
 

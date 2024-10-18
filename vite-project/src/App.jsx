@@ -1,21 +1,31 @@
 import React from 'react';
-import {Route, Routes} from 'react-router-dom'
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
 import './App.css';
 import LoginPage from './pages/LoginPage';
 import IniPage from './pages/IniPage';
 import {Link} from 'react-router-dom'
-// import ProductsPage from './pages/ProductsPage';
+import ProductsPage from './pages/ProductsPage';
+// import Navigate from './components/Navigate';
+
 // import ProductDetailsPage from './pages/ProductDetailsPage';
 // import CheckoutPage from './pages/CheckoutPage';
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <div>
-        <IniPage></IniPage>
-        <LoginPage></LoginPage>
+      <IniPage></IniPage>
+        {/*
+        <nav>
+          <Link to="/products">Produtos</Link>
+        </nav> */}
+        
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/products" element={<ProductsPage />} /> 
+        </Routes>
       </div>
-    </>
+    </BrowserRouter>
   );
 }
 
