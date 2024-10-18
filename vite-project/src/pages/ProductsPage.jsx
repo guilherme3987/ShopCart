@@ -9,6 +9,7 @@ export default function ProductsPage() {
     const [error, setError] = useState(null)
     
     //fetch async
+    //userEffect
 
     return(
         <>
