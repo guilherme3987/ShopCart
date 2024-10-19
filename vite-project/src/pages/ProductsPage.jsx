@@ -45,11 +45,18 @@ export default function ProductsPage() {
             <div id="box-products">
                 {products.map(product => (
                     <div className="product-item">
-                        <img src={product.image} alt={product.title} className="product-image" />
-                        <h2>{product.title}</h2>
-                        <p>{product.description}</p>
-                        <p className="product-price">R$ {product.price}</p>
-                        <button className="add-to-cart">Adicionar ao Carrinho</button>
+                        
+                        <div id='products-image'>
+                            <img src={product.image} alt={product.title} className="product-image" />
+                        </div>
+                        
+                        <div id='products-description'>
+                            <h2>{product.title}</h2>
+                            <p>{product.description}</p>
+                            <p div="product-price">R$ {product.price}</p>
+                        </div>
+                        
+                        <button div="add-to-cart">Adicionar ao Carrinho</button>
                     </div>
                 ))}
             </div>
