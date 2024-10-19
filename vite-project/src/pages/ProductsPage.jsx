@@ -44,7 +44,7 @@ export default function ProductsPage() {
             <h1>Página de Produtos</h1>
             <div id="box-products">
                 {products.map(product => (
-                    <div className="product-item" key={product.id}>
+                    <div className="product-item">
                         <img src={product.image} alt={product.title} className="product-image" />
                         <h2>{product.title}</h2>
                         <p>{product.description}</p>
