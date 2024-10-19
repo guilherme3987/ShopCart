@@ -22,7 +22,7 @@ export default function LoginPage() {
 
   // Verifica a validade do email e da senha
   const checkEmailPass = (email, password) => {
-    const isEmailValid = /\S+@\S+\.\S+/.test(email);
+    const isEmailValid = /^[\w.-]+@gmail\.com$/.test(email);
     const isPasswordValid = password.length >= 8;
 
     setFormValid(isEmailValid && isPasswordValid);
