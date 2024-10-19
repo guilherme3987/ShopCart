@@ -1,4 +1,4 @@
-#box-products {
+/*#box-products {
     display: grid; 
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
     margin: 10px;
@@ -11,6 +11,6 @@
     border: 1px solid #ddd; 
     border-radius: 8px; 
     padding: 50px; 
-    background-image: url('https://m.media-amazon.com/images/I/61xAz257h0L._AC_SY355_.jpg');
-    background-size: cover;
+
 }
+*/
