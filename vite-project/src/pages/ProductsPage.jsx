@@ -20,7 +20,7 @@ export default function ProductsPage() {
 
     useEffect(() => {
         fetchProducts();
-    });
+    },[]);
 
     if (loading) {
         return <div>Carregando produtos...</div>;
