@@ -13,7 +13,9 @@ export default function ProductsPage() {
             setProducts(data);
         } catch (err) {
             setError(err.message);
-        } 
+        } finally {
+            setLoading(false);
+        }
     };
 
     useEffect(() => {
