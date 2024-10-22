@@ -51,12 +51,11 @@ export default function ProductsPage() {
                             <img src={product.image} alt={product.title} className="product-image" />
                         </div>
                         
-                        <div id='products-description'>
+                        {/*<div id='products-description'>
                             <h2>{product.title}</h2>
                             <p>{product.description}</p>
                             <p div="product-price">R$ {product.price}</p>
-                        </div>
-                        
+                        </div>*/}   
                         <button div="add-to-cart">Adicionar ao Carrinho</button>
                     </div>
                 ))}
