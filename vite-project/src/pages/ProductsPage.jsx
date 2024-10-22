@@ -1,6 +1,9 @@
 import '../styles/ProductsPage.css';
 import React, { useEffect, useState } from 'react';
 
+import { Link } from 'react-router-dom';
+
+
 export default function ProductsPage() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -49,7 +52,10 @@ export default function ProductsPage() {
                         
                         <h2>{product.title}</h2>
                         <div id='products-image'>
-                            <img src={product.image} alt={product.title} className="product-image" />
+                            <Link to={'/productsDetails'}>
+                                <img src={product.image} alt={product.title} className="product-image" />
+                            </Link>
+                            
                         </div>
                         
                         {/*<div id='products-description'>

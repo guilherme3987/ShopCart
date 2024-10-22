@@ -10,7 +10,7 @@ import ProductsPage from './pages/ProductsPage';
 
 // import Navigate from './components/Navigate';
 
-// import ProductDetailsPage from './pages/ProductDetailsPage';
+import ProductDetailsPage from './pages/ProductDetailsPage';
 // import CheckoutPage from './pages/CheckoutPage';
 
 function App() {
@@ -26,6 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route path="/products" element={<ProductsPage />} /> 
+          <Route path='/productsDetails' element={<ProductDetailsPage/>}></Route>
         </Routes>
       </div>
     </BrowserRouter>
