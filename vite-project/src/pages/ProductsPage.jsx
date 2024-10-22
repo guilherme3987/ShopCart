@@ -40,9 +40,6 @@ export default function ProductsPage() {
                 <div class="navbar-brand">
                     <a href="">Carrinho de compras</a>
                 </div>
-                <div class="navbar-brand">
-                    <a href="">Categoria de produtos</a>
-                </div>
             </nav>
             
             <h1>Página de Produtos</h1>
