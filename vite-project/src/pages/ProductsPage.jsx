@@ -47,6 +47,7 @@ export default function ProductsPage() {
                 {products.map(product => (
                     <div className="product-item">
                         
+                        <h2>{product.title}</h2>
                         <div id='products-image'>
                             <img src={product.image} alt={product.title} className="product-image" />
                         </div>

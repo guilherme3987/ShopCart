@@ -15,9 +15,14 @@
 }
 */
 #root{
-    background-color: rgb(181, 181, 181);
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
 }
 #products-image{
     margin: 50px;
+    transition: background-color 0.5s ease;
+}
+.product-image{
+    width: 250px;
+    cursor:pointer;
 }
