@@ -14,12 +14,10 @@ export default function ProductDetailsPage() {
         fetch('https://fakestoreapi.com/products/1')  // Corrigir o '}' extra na URL
         .then(response => {
             return response.json();
-        })
-        .then(data => {
+        }).then(data => {
             setProduct(data);
             setLoading(false);
-        })
-        .catch(err => {
+        }).catch(err => {
             setError(err.message);
             setLoading(false);
         });
