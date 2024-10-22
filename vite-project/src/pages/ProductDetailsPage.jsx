@@ -1,34 +1,43 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/ProductDetailsPage.css';
+// import { useParams } from 'react-router-dom';
 
 export default function ProductDetailsPage() {
     // pegar API com ids 
     // https://fakestoreapi.com/products/1
     // anexar id para API buscar o id
-    const [product, setProduct] = useState('')
-    const [loading, setLoading] = useState('')
-    const [error, setError] = useState('')
+    const [product, setProduct] = useState('');
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState('');    // const { id } = useParams();
+
     
     const fetchProductsDetail = () =>{
-        fetch('https://fakestoreapi.com/products/1')
-        .then(response =>{
-            if(!response.ok){
-                console.log(response);
-            }
-            return response.json()
-        }).then(data =>{
-            setProduct(data)
-            setLoading(false)
-        }).catch(error => {
-            setError(error.message)
-            setLoading(false)
+        fetch('https://fakestoreapi.com/products/1')  // Corrigir o '}' extra na URL
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            setProduct(data);
+            setLoading(false);
+        })
+        .catch(err => {
+            setError(err.message);
+            setLoading(false);
         });
     };
 
     useEffect(() => {
         fetchProductsDetail();
-    });
+    }, []);
 
+    if (loading) {
+        return <div className="loading">Carregando detalhes do produto...</div>;
+      }
+    
+      if (error) {
+        return <div className="error">Erro: {error}</div>;
+      }
+    
     return (
         <div>
           {product && (
