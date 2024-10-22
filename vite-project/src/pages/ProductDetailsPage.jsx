@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/ProductDetailsPage.css';
-// import { useParams } from 'react-router-dom';
 
 export default function ProductDetailsPage() {
     // pegar API com ids 
