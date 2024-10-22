@@ -17,7 +17,7 @@ function App() {
   return (
     <BrowserRouter>
       <div>
-      <IniPage></IniPage>
+        <IniPage></IniPage>
         {/*
         <nav>
           <Link to="/products">Produtos</Link>
