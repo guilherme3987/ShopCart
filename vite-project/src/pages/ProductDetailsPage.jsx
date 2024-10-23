@@ -7,11 +7,11 @@ export default function ProductDetailsPage() {
     // anexar id para API buscar o id
     const [product, setProduct] = useState('');
     const [loading, setLoading] = useState(true);
-    const [error, setError] = useState('');    // const { id } = useParams();
+    const [error, setError] = useState('');   
 
     
     const fetchProductsDetail = () =>{
-        fetch('https://fakestoreapi.com/products/1')  // Corrigir o '}' extra na URL
+        fetch('https://fakestoreapi.com/products/1')  
         .then(response => {
             return response.json();
         }).then(data => {
