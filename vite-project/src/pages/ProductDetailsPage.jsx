@@ -28,11 +28,11 @@ export default function ProductDetailsPage() {
     }, []);
 
     if (loading) {
-        return <div className="loading">Carregando detalhes do produto...</div>;
+        <div className="loading">Carregando detalhes do produto...</div>;
       }
     
-      if (error) {
-        return <div className="error">Erro: {error}</div>;
+    if (error) {
+        <div className="error">Erro: {error}</div>;
       }
     
     return (
