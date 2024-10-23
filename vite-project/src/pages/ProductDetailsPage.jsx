@@ -36,7 +36,6 @@ export default function ProductDetailsPage() {
       }
     
     return (
-        <div>
             <>
               <h1>{product.title}</h1>
               <img src={product.image} alt={product.title} style={{ width: '300px' }} />
@@ -44,6 +43,5 @@ export default function ProductDetailsPage() {
               <h3 className='price'>Preço: R$ {product.price}</h3>
               <button>Adicionar ao Carrinho</button>
             </>
-        </div>
       );
 }
