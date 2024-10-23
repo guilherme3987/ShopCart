@@ -25,7 +25,6 @@ export default function ProductsPage() {
         fetchProducts();
     },[]);
 
-    //aplicar ternário
     if (loading) {
         return <div>Carregando produtos...</div>;
     }
