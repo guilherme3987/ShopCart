@@ -1,7 +1,21 @@
-.description{
-    width: 500px;
-    margin: auto;
+.description {
+    text-align: center;
+    margin-bottom: 10px;
 }
-.price{
-    color: blue;
+  
+.price {
+    color: rgb(25, 10, 234);
+    text-align: center;
+    margin-bottom: 20px;
 }
+h5{
+    font-size: 1em;
+} 
+
+
+@media (min-width: 768px) {  
+    .description,
+    .price {
+        font-size: 1em;
+    }
+  }

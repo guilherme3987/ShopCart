@@ -39,7 +39,7 @@ export default function ProductDetailsPage() {
             <>
               <h1>{product.title}</h1>
               <img src={product.image} alt={product.title} style={{ width: '300px' }} />
-              <h4 className='description'>{product.description}</h4>
+              <h5 className='description'>{product.description}</h5>
               <h3 className='price'>Preço: R$ {product.price}</h3>
               <button>Adicionar ao Carrinho</button>
             </>
