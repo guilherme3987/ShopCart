@@ -19,7 +19,7 @@ export default function CheckoutPage() {
       <button onClick={handleBuyClick}>Comprar</button>
 
       {showPayOp && (
-        <div className="payment-options-container">
+        <div className="options">
           <h2>Escolha a forma de pagamento</h2>
           
           <select value={selectedOption} onChange={handleSelectChange}>
@@ -31,9 +31,7 @@ export default function CheckoutPage() {
           </select>
 
           {selectedOption && (
-            <div className="selected-info">
               <p>Opção selecionada: <strong>{selectedOption}</strong></p>
-            </div>
           )}
         </div>
       )}
