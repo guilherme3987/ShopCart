@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/ProductDetailsPage.css';
-
+import {Link} from 'react-router-dom'
 export default function ProductDetailsPage() {
     // pegar API com ids 
     // https://fakestoreapi.com/products/1
@@ -41,7 +41,10 @@ export default function ProductDetailsPage() {
               <img src={product.image} alt={product.title} style={{ width: '300px' }} />
               <h5 className='description'>{product.description}</h5>
               <h3 className='price'>Preço: R$ {product.price}</h3>
-              <button>Adicionar ao Carrinho</button>
+              <Link to={"/checkout"}>
+                    <button div="add-to-cart">Adicionar ao Carrinho</button>
+
+               </Link>            
             </>
       );
 }
