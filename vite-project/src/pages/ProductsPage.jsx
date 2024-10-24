@@ -58,8 +58,11 @@ export default function ProductsPage() {
                             <h2>{product.title}</h2>
                             <p>{product.description}</p>
                             <p div="product-price">R$ {product.price}</p>
-                        </div>*/}   
-                        <button div="add-to-cart">Adicionar ao Carrinho</button>
+                        </div>*/} 
+                        <Link to={"/checkout"}>
+                            <button div="add-to-cart">Adicionar ao Carrinho</button>
+
+                        </Link>  
                     </div>
                 ))}
             </div>
