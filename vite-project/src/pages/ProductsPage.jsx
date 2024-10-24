@@ -37,7 +37,10 @@ export default function ProductsPage() {
         <>
             <nav class="navbar">
                 <div class="navbar-brand">
-                    <a href="">Carrinho de compras</a>
+                    <Link to={"/checkout"}>
+                        <a href="">Carrinho de compras</a>
+                    </Link>
+                    
                 </div>
             </nav>
             
