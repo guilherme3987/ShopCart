@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/CheckoutPage.css';
 
 export default function CheckoutPage() {
   const [showPayOp, setshowPayOp] = useState(false);
