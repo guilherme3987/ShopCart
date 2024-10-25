@@ -35,40 +35,44 @@ export default function ProductsPage() {
 
     return (
         <>
+        <div className='box'>
             <nav class="navbar">
-                <div class="navbar-brand">
-                    <Link to={"/checkout"}>
-                        <a href="">Carrinho de compras</a>
-                    </Link>
-                    
-                </div>
-            </nav>
-            
-            <h1>Página de Produtos</h1>
-            <div id="box-products">
-                {products.map(product => (
-                    <div className="product-item">
-                        
-                        <h2>{product.title}</h2>
-                        <div id='products-image'>
-                            <Link to={'/productsDetails'}>
-                                <img src={product.image} alt={product.title} className="product-image" />
-                            </Link>
-                            
-                        </div>
-                        
-                        {/*<div id='products-description'>
-                            <h2>{product.title}</h2>
-                            <p>{product.description}</p>
-                            <p div="product-price">R$ {product.price}</p>
-                        </div>*/} 
+                    <div class="navbar-brand">
                         <Link to={"/checkout"}>
-                            <button div="add-to-cart">Adicionar ao Carrinho</button>
-
-                        </Link>  
+                            <a href="">Carrinho de compras</a>
+                        </Link>
+                        
                     </div>
-                ))}
-            </div>
+                </nav>
+                
+                <h1>Página de Produtos</h1>
+                <div id="box-products">
+                    {products.map(product => (
+                        <div className="product-item">
+                            
+                            <h2>{product.title}</h2>
+                            <div id='products-image'>
+                                <Link to={'/productsDetails'}>
+                                    <img src={product.image} alt={product.title} className="product-image" />
+                                </Link>
+                                
+                            </div>
+                            
+                            {/*<div id='products-description'>
+                                <h2>{product.title}</h2>
+                                <p>{product.description}</p>
+                                <p div="product-price">R$ {product.price}</p>
+                            </div>*/} 
+                            <Link to={"/checkout"}>
+                                <button div="add-to-cart">Adicionar ao Carrinho</button>
+
+                            </Link>  
+                        </div>
+                    ))}
+                </div>
+
+        </div>
+        
         </>
     );
 }
