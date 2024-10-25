@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 export default function ProductDetailsPage() {
     // pegar API com ids 
     // https://fakestoreapi.com/products/1
-    // anexar id para API buscar o id
+    // anexar id para API buscar o produto clicado 
     const [product, setProduct] = useState('');
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');   
