@@ -39,7 +39,7 @@ export default function ProductDetailsPage() {
     return (
             <>
                 <h1>{product.title}</h1>
-                <img src={product.image} alt={product.title}  />
+                <img src={product.image} alt={product.title} className="product-image"  />
                 <h5 className='description'>{product.description}</h5>
                 <h3 className='price'>Preço: R$ {product.price}</h3>
                 <Link to={"/checkout"}>

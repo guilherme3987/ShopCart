@@ -12,7 +12,10 @@ h5{
     font-size: 1em;
 } 
 
-
+.product-image{
+    width: 250px;
+    cursor:pointer;
+}
 @media (min-width: 500px) {  
     .description,
     .price {
