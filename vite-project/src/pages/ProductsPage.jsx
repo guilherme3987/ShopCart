@@ -3,11 +3,15 @@ import React, { useEffect, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 
+import { useCart } from '../context/CartProducts';
+
 
 export default function ProductsPage() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    const { addToCart } = useCart();
 
     const fetchProducts = async () => {
         try {
@@ -65,7 +69,7 @@ export default function ProductsPage() {
                                 <p div="product-price">R$ {product.price}</p>
                             </div>*/} 
                             <Link to={"/checkout"}>
-                                <button div="add-to-cart">Adicionar ao Carrinho</button>
+                                <button onClick={() => addToCart(product)}>Adicionar ao Carrinho</button>
 
                             </Link>  
                         </div>
