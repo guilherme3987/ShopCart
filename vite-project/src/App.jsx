@@ -26,7 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route path="/products" element={<ProductsPage />} /> 
-          <Route path='/productsDetails' element={<ProductDetailsPage/>}></Route>
+          <Route path='/products/:id' element={<ProductDetailsPage/>}></Route>{/* Rota atualizada */}
           <Route path='/checkout' element={<CheckoutPage/>}></Route>
         </Routes>
       </div>

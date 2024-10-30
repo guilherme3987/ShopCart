@@ -52,7 +52,8 @@ export default function ProductsPage() {
                             
                             <h2>{product.title}</h2>
                             <div id='products-image'>
-                                <Link to={'/productsDetails'}>
+                                {/* Atualiza a rota para incluir o ID do produto */}
+                                <Link to={`/products/${product.id}`}>
                                     <img src={product.image} alt={product.title} className="product-image" />
                                 </Link>
                                 
