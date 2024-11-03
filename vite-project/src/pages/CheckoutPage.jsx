@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../styles/CheckoutPage.css';
 import { useLocation } from 'react-router-dom';
 
+  //Armazenar todos os itens adicionados ao carrinho em um estado global ou contexto compartilhado
 
 export default function CheckoutPage() {
   const [showPayOp, setshowPayOp] = useState(false);
