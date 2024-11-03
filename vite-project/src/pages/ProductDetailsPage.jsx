@@ -39,7 +39,7 @@ export default function ProductDetailsPage() {
     
     const handleAddToCart = () => {
         navigate("/checkout", { state: { product } });
-    };
+    };//handleAddToCart para manipular  estado local 
 
     return (
             <>
