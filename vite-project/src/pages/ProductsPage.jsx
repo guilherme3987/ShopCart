@@ -1,13 +1,16 @@
 import '../styles/ProductsPage.css';
 import React, { useEffect, useState } from 'react';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate  } from 'react-router-dom';
 
 
 export default function ProductsPage() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    const navigate = useNavigate();
+
 
     const fetchProducts = async () => {
         try {
@@ -24,6 +27,17 @@ export default function ProductsPage() {
     useEffect(() => {
         fetchProducts();
     },[]);
+
+    const handleAddToCart = (product) => {
+        alert('Produto adicionado ao carrinho')
+        const goToCheckout = window.confirm("Continuar comprando ? ")
+        //alert(goToCheckout)
+        if (goToCheckout === false) {
+            navigate("/checkout", { state: { product } });
+        }
+        
+    };
+
 
     if (loading) {
         return <div>Carregando produtos...</div>;
@@ -63,10 +77,12 @@ export default function ProductsPage() {
                                 <p>{product.description}</p>
                                 <p div="product-price">R$ {product.price}</p>
                             </div>*/} 
-                            <Link to={"/checkout"}>
+                            {/*<Link to={"/checkout"}>
                                 <button div="add-to-cart">Adicionar ao Carrinho</button>
 
-                            </Link>  
+                            </Link>*/}
+                            <button onClick={() => handleAddToCart(product)} className="add-to-cart">Adicionar ao Carrinho</button>
+
                         </div>
                     ))}
                 </div>
