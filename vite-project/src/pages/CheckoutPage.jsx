@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import '../styles/CheckoutPage.css';
+import { useLocation } from 'react-router-dom';
+
 
 export default function CheckoutPage() {
   const [showPayOp, setshowPayOp] = useState(false);
   const [selectedOption, setSelectedOption] = useState('');
+
+  const location = useLocation();
+  const product = location.state?.product;
 
   const handleBuyClick = () => {
     setshowPayOp(true); 
@@ -16,7 +21,15 @@ export default function CheckoutPage() {
   return (
     <>
       <h1>Página de carrinhos de produtos</h1>
-
+      {product ? (
+                <>
+                    <h2>{product.title}</h2>
+                    <img src={product.image} alt={product.title} className="product-image" />
+                    <h3>Preço: R$ {product.price}</h3>
+                </>
+            ) : (
+                <p>Nenhum produto adicionado ao carrinho.</p>
+            )}
       <button onClick={handleBuyClick}>Comprar</button>
 
       {showPayOp && (
