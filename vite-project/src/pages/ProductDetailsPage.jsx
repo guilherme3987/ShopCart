@@ -38,7 +38,15 @@ export default function ProductDetailsPage() {
       }
     
     const handleAddToCart = () => {
-        navigate("/checkout", { state: { product } });
+        alert('Produto adicionado ao carrinho')
+        const goToCheckout = window.confirm("Continuar comprando ? ")
+        //alert(goToCheckout)
+        if (goToCheckout === false) {
+            navigate("/checkout", { state: { product } });
+        }
+        if (goToCheckout === true){
+            navigate("/products")
+        }
     };//handleAddToCart para manipular  estado local 
 
     return (
