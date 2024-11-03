@@ -1,16 +1,15 @@
+import React, { useEffect, useState, useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { CartProducts } from '../components/CartProducts';
 import '../styles/ProductsPage.css';
-import React, { useEffect, useState } from 'react';
-
-import { Link, useNavigate  } from 'react-router-dom';
-
 
 export default function ProductsPage() {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const { AddToCart } = useContext(CartProducts);  // Importando o AddToCart
 
     const navigate = useNavigate();
-
 
     const fetchProducts = async () => {
         try {
@@ -26,18 +25,16 @@ export default function ProductsPage() {
 
     useEffect(() => {
         fetchProducts();
-    },[]);
+    }, []);
 
     const handleAddToCart = (product) => {
-        alert('Produto adicionado ao carrinho')
-        const goToCheckout = window.confirm("Continuar comprando ? ")
-        //alert(goToCheckout)
-        if (goToCheckout === false) {
-            navigate("/checkout", { state: { product } });
+        AddToCart(product);  // Chamada correta para adicionar ao carrinho
+        alert('Produto adicionado ao carrinho');
+        const goToCheckout = window.confirm("Continuar comprando?");
+        if (!goToCheckout) {
+            navigate("/checkout");
         }
-        
     };
-
 
     if (loading) {
         return <div>Carregando produtos...</div>;
@@ -48,47 +45,24 @@ export default function ProductsPage() {
     }
 
     return (
-        <>
         <div className='box'>
-            <nav class="navbar">
-                    <div class="navbar-brand">
-                        <Link to={"/checkout"}>
-                            <a href="">Carrinho de compras</a>
-                        </Link>
-                        
-                    </div>
-                </nav>
-                
-                <h1>Página de Produtos</h1>
-                <div id="box-products">
-                    {products.map(product => (
-                        <div className="product-item">
-                            
-                            <h2>{product.title}</h2>
-                            <div id='products-image'>
-                                <Link to={`/products/${product.id}`}>
-                                    <img src={product.image} alt={product.title} className="product-image" />
-                                </Link>
-                                
-                            </div>
-                            
-                            {/*<div id='products-description'>
-                                <h2>{product.title}</h2>
-                                <p>{product.description}</p>
-                                <p div="product-price">R$ {product.price}</p>
-                            </div>*/} 
-                            {/*<Link to={"/checkout"}>
-                                <button div="add-to-cart">Adicionar ao Carrinho</button>
-
-                            </Link>*/}
-                            <button onClick={() => handleAddToCart(product)} className="add-to-cart">Adicionar ao Carrinho</button>
-
+            <Link to={"/checkout"}>
+                <a href="">Carrinho de compras</a>
+            </Link>
+            <h1>Página de Produtos</h1>
+            <div id="box-products">
+                {products.map(product => (
+                    <div className="product-item" key={product.id}>
+                        <h2>{product.title}</h2>
+                        <div id='products-image'>
+                            <Link to={`/products/${product.id}`}>
+                                <img src={product.image} alt={product.title} className="product-image" />
+                            </Link>
                         </div>
-                    ))}
-                </div>
-
+                        <button onClick={() => handleAddToCart(product)} className="add-to-cart">Adicionar ao Carrinho</button>
+                    </div>
+                ))}
+            </div>
         </div>
-        
-        </>
     );
 }

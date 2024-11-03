@@ -13,27 +13,26 @@ import ProductsPage from './pages/ProductsPage';
 import ProductDetailsPage from './pages/ProductDetailsPage';
 import CheckoutPage from './pages/CheckoutPage';
 
+import {CartProvider} from './components/CartProducts'
+
 function App() {
   return (
     <BrowserRouter>
-      <div>
-        <IniPage></IniPage>
-        {/*
-        <nav>
-          <Link to="/products">Produtos</Link>
-        </nav> */}
-        
-        <Routes>
-          <Route path="/" element={<LoginPage />} />
-          <Route path="/products" element={<ProductsPage />} /> 
-          <Route path='/products/:id' element={<ProductDetailsPage/>}></Route>{/* Rota atualizada */}
-          <Route path='/checkout' element={<CheckoutPage/>}></Route>
-        </Routes>
-      </div>
+      <CartProvider> 
+        <div>
+          <IniPage />
+          <Routes>
+            <Route path="/" element={<LoginPage />} />
+            <Route path="/products" element={<ProductsPage />} />
+            <Route path="/products/:id" element={<ProductDetailsPage />} />
+            <Route path="/checkout" element={<CheckoutPage />} />
+          </Routes>
+        </div>
+      </CartProvider>
     </BrowserRouter>
   );
 }
 
-export default App
+export default App;
 
 
