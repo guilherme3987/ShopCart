@@ -5,6 +5,7 @@ import { CartProducts } from '../components/CartProducts';
 
 export default function CheckoutPage() {
     const [showPayOp, setshowPayOp] = useState(false);
+    const [showBuyCart,setshowBuyCart] = useState(false)
     const [selectedOption, setSelectedOption] = useState('');
     const location = useLocation();
     const product = location.state?.product;
@@ -22,6 +23,11 @@ export default function CheckoutPage() {
     const handleBuyClick = () => {
         setshowPayOp(true);
     };
+
+    const handleBuyCart = () => {
+        setshowBuyCart(true)
+        alert("Compra efetuada")
+    }
 
     const handleSelectChange = (event) => {
         setSelectedOption(event.target.value);
@@ -69,7 +75,7 @@ export default function CheckoutPage() {
                     <h3>Valor Total da Compra: R$ {totalValue.toFixed(2)}</h3>
                 </div>
             )}
-            <button onClick={handleBuyClick}>Comprar</button>
+            <button onClick={handleBuyClick}disabled={cartItems.length === 0}>Comprar</button>
             {showPayOp && (
                 <div className="options">
                     <h2>Escolha a forma de pagamento</h2>
@@ -86,9 +92,21 @@ export default function CheckoutPage() {
                         <p>Opção selecionada: <strong>{selectedOption}</strong></p>
                     )}
                     <div>
-                        <button className='BuyAllCart'/*onClick={handleBuyCart}*/>Finalizar compra</button>
+                        <button className='BuyAllCart' onClick={handleBuyCart} disabled={!selectedOption}>Finalizar compra</button>
                     </div>
-                    
+                    {setshowBuyCart && (
+                      <div className='purchase-description'>
+                        <h2>Resumo do pedido</h2>
+                        <p>Forma de pagamento: <strong>{selectedOption}</strong></p>
+
+                        {cartItems.map((product) =>(
+                            <div>
+                                <p><strong>{product.title.split(" ")[0]} - Quantidade: {product.quantity} - Total: R$ {(product.price * product.quantity).toFixed(2)}</strong></p>
+                            </div>
+                        ))}
+
+                      </div>  
+                    )}
                 </div>
             )}
         </>
