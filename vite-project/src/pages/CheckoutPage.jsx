@@ -63,7 +63,7 @@ export default function CheckoutPage() {
                                 onChange={(e) => handleQuantityChange(product.id, parseInt(e.target.value))}
                             />
                             <p>Total: R$ {(product.price * product.quantity).toFixed(2)}</p>
-                            <button onClick={() => removeFromCart(product.id)}>Remover</button>
+                            <button onClick={() => removeFromCart(product.id)}>Remover {product.title.split(" ")[0]}</button>
                         </div>
                     ))}
                     <h3>Valor Total da Compra: R$ {totalValue.toFixed(2)}</h3>
@@ -85,6 +85,10 @@ export default function CheckoutPage() {
                     {selectedOption && (
                         <p>Opção selecionada: <strong>{selectedOption}</strong></p>
                     )}
+                    <div>
+                        <button className='BuyAllCart'/*onClick={handleBuyCart}*/>Finalizar compra</button>
+                    </div>
+                    
                 </div>
             )}
         </>

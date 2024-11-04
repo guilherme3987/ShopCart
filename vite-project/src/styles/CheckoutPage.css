@@ -1,6 +1,16 @@
 .options{
     background-color: rgb(192, 188, 188);
     border-radius: 10px;
+    padding-bottom: 10px;
+}
+.cart-item{
+    padding: 10px;
+}
+.BuyAllCart{
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
 }
 @media (min-width: 500px) {  
     #root{
