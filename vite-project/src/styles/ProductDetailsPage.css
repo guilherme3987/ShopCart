@@ -11,7 +11,9 @@
 h5{
     font-size: 1em;
 } 
-
+.rating-product{
+    color: rgb(245, 186, 9);
+}
 .product-image{
     width: 250px;
     cursor:pointer;
