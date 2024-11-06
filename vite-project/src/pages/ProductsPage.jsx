@@ -45,6 +45,7 @@ export default function ProductsPage() {
     }
 
     return (
+        
         <div className='box'>
             
             <div className='link-cart'>
@@ -52,13 +53,9 @@ export default function ProductsPage() {
                     <a href="">Carrinho de compras</a>
                 </Link>
             </div>
-
-            <div id='title-page-products'>
-                <h1>Página de Produtos</h1>
-            </div>
             
+            <h1 className='title-page-products'>Produtos</h1>
 
-            
             <div id="box-products">
                 {products.map(product => (
                     <div className="product-item" key={product.id}>

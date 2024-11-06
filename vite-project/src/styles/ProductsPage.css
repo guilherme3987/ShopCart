@@ -22,8 +22,8 @@
 .link-cart{
     margin: 20px;
 }
-#title-page-products{
-    margin: 50px;
+.title-page-products{
+    margin: 30px;
 }
 .product-image{
     width: 250px;
@@ -32,6 +32,7 @@
 .product-image:hover{
     transform: scale(1.1); 
 }
+
 @media (min-width: 500px) {  
     #box-products{
         margin-top: -20px;
