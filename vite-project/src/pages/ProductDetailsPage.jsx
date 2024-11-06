@@ -41,7 +41,7 @@ export default function ProductDetailsPage() {
             <h1>{product.title}</h1>
             <img src={product.image} alt={product.title} className="product-image" />
             <h5 className='description'>{product.description}</h5>
-            <h5>Estoque: {product.rating.count}</h5>
+            <h5 className='count'>Estoque: {product.rating.count}</h5>
             <h5 className='rating-product'>Avaliação: {product.rating.rate}</h5>
             <h3 className='price'>Preço: R$ {product.price}</h3>
             <button onClick={handleAddToCart} className="add-to-cart">Adicionar ao Carrinho</button>

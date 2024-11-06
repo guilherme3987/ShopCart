@@ -6,3 +6,9 @@
     background: url('https://d1csarkz8obe9u.cloudfront.net/posterpreviews/e-commerce-logo%2Conline-store-logo%2Ccart-logo-design-template-9b5e4319f7f69b92d7421a048ce90dcb_screen.jpg?ts=1662916038');
     background-size: cover;
 }
+#slogan{
+    padding: 5px;
+    border-radius: 30px;
+    margin: 10px;
+    background-color: rgb(192, 188, 188);
+}
