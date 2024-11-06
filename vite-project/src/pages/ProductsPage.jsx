@@ -59,6 +59,9 @@ export default function ProductsPage() {
                                 <img src={product.image} alt={product.title} className="product-image" />
                             </Link>
                         </div>
+                        <div id='products-price'>
+                            <h3 className='price'>Preço: R$ {product.price}</h3>
+                        </div>
                         <button onClick={() => handleAddToCart(product)} className="add-to-cart">Adicionar ao Carrinho</button>
                     </div>
                 ))}

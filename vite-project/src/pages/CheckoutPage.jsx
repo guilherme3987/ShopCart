@@ -46,7 +46,7 @@ export default function CheckoutPage() {
                     <h3>Preço: R$ {product.price}</h3>
                 </>
             ) : (
-                <p>Nenhum produto adicionado ao carrinho.</p>
+                <p>Seus produtos</p>
             )}
 
             {cartItems.length === 0 ? (                
