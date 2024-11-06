@@ -72,10 +72,9 @@ export default function CheckoutPage() {
                             <button onClick={() => removeFromCart(product.id)}>Remover {product.title.split(" ")[0]}</button>
                         </div>
                     ))}
-                    <h3>Valor Total da Compra: R$ {totalValue.toFixed(2)}</h3>
                 </div>
             )}
-            <button onClick={handleBuyClick}disabled={cartItems.length === 0}>Comprar</button>
+            <button className="button-buy" onClick={handleBuyClick}disabled={cartItems.length === 0}>Comprar</button>
             {showPayOp && (
                 <div className="options">
                     <h2>Escolha a forma de pagamento</h2>
@@ -104,7 +103,7 @@ export default function CheckoutPage() {
                                 <p><strong>{product.title.split(" ")[0]} - Quantidade: {product.quantity} - Total: R$ {(product.price * product.quantity).toFixed(2)}</strong></p>
                             </div>
                         ))}
-
+                        <h3>Valor Total da Compra: R$ {totalValue.toFixed(2)}</h3>
                       </div>  
                     )}
                 </div>

@@ -12,6 +12,9 @@
     align-content: center;
     justify-items: center;
 }
+.button-buy{
+    margin: 30px;
+}
 @media (min-width: 500px) {  
     #root{
         width: 400px;
