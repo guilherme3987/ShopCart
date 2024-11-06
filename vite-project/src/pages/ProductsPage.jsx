@@ -46,10 +46,19 @@ export default function ProductsPage() {
 
     return (
         <div className='box'>
-            <Link to={"/checkout"}>
-                <a href="">Carrinho de compras</a>
-            </Link>
-            <h1>Página de Produtos</h1>
+            
+            <div className='link-cart'>
+                <Link to={"/checkout"}>
+                    <a href="">Carrinho de compras</a>
+                </Link>
+            </div>
+
+            <div id='title-page-products'>
+                <h1>Página de Produtos</h1>
+            </div>
+            
+
+            
             <div id="box-products">
                 {products.map(product => (
                     <div className="product-item" key={product.id}>

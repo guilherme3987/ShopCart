@@ -19,9 +19,11 @@
     border-radius: 10px;
     padding: 80px;
 }
-#products-image{
+.link-cart{
+    margin: 20px;
+}
+#title-page-products{
     margin: 50px;
-    transition: background-color 0.5s ease;
 }
 .product-image{
     width: 250px;
