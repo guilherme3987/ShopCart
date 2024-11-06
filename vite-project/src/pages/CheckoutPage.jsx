@@ -68,7 +68,7 @@ export default function CheckoutPage() {
                                 value={product.quantity}
                                 onChange={(e) => handleQuantityChange(product.id, parseInt(e.target.value))}
                             />
-                            <p>Total: R$ {(product.price * product.quantity).toFixed(2)}</p>
+                            <p>Valor total da compra: R$ {(product.price * product.quantity).toFixed(2)}</p>
                             <button onClick={() => removeFromCart(product.id)}>Remover {product.title.split(" ")[0]}</button>
                         </div>
                     ))}
