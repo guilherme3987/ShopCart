@@ -101,7 +101,7 @@ export default function CheckoutPage() {
 
                         {cartItems.map((product) =>(
                             <div>
-                                <p><strong>{product.title.split(" ")[0]} - Quantidade: {product.quantity} - Total: R$ {(product.price * product.quantity).toFixed(2)}</strong></p>
+                                <p><strong>{product.title.split(" ")[0]} - Quantidade: {product.quantity} - Total: R$ {(product.price * product.quantity)}</strong></p>
                             </div>
                         ))}
 
