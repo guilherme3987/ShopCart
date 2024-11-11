@@ -16,7 +16,7 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/index.html"
+        "dest": "/vite-project/src"
       }
     ]
   }
